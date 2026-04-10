@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      auto_posts: {
+        Row: {
+          content: string
+          created_at: string
+          error_message: string | null
+          facebook_post_id: string | null
+          id: string
+          posted_at: string | null
+          status: string
+          tags: string[] | null
+          title: string
+          topic: string | null
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          error_message?: string | null
+          facebook_post_id?: string | null
+          id?: string
+          posted_at?: string | null
+          status?: string
+          tags?: string[] | null
+          title: string
+          topic?: string | null
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          error_message?: string | null
+          facebook_post_id?: string | null
+          id?: string
+          posted_at?: string | null
+          status?: string
+          tags?: string[] | null
+          title?: string
+          topic?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

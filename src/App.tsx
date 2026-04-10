@@ -12,6 +12,7 @@ import Notifications from "./pages/Notifications";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import Pricing from "./pages/Pricing";
+import AutoPost from "./pages/AutoPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/trending" element={<Trending />} />
             <Route path="/tools" element={<Tools />} />
+            <Route path="/auto-post" element={<AutoPost />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/profile" element={<Profile />} />

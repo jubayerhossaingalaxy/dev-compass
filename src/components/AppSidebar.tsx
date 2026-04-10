@@ -1,4 +1,4 @@
-import { Flame, Compass, Wrench, LayoutGrid, Bell, User, Settings, Zap, TrendingUp } from "lucide-react";
+import { Flame, Compass, Wrench, LayoutGrid, Bell, User, Settings, Zap, TrendingUp, Bot } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import {
@@ -11,6 +11,7 @@ const mainNav = [
   { title: "Trending", url: "/trending", icon: TrendingUp },
   { title: "Tools", url: "/tools", icon: Wrench },
   { title: "Categories", url: "/categories", icon: LayoutGrid },
+  { title: "AI Auto Post", url: "/auto-post", icon: Bot },
 ];
 
 const userNav = [
