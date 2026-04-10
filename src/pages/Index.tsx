@@ -1,16 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { posts } from "@/data/mockData";
+import { PostCard } from "@/components/PostCard";
+import { FeedHeader } from "@/components/FeedHeader";
+import { RightPanel } from "@/components/RightPanel";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const [activeTab, setActiveTab] = useState("trending");
+
+  const sortedPosts = [...posts].sort((a, b) => {
+    if (activeTab === "latest") return 0;
+    return b.score - a.score;
+  });
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="flex gap-6 max-w-full">
+      <div className="flex-1 min-w-0">
+        <FeedHeader activeTab={activeTab} onTabChange={setActiveTab} />
+        <div className="space-y-4">
+          {sortedPosts.map((post, i) => (
+            <PostCard key={post.id} post={post} index={i} />
+          ))}
+        </div>
+      </div>
+      <RightPanel />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
